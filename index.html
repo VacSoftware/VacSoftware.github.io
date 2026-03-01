@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VacSoftware • Sade Hile İndir</title>
+    <!-- Font Awesome 6 (ücretsiz) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Inter ve Outfit (modern ve sade) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & DEĞİŞKENLER ========== */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Yumuşak, sade renk paleti */
+            --bg-light: #f8fafc;
+            --bg-card: rgba(255, 255, 255, 0.75);
+            --text-primary: #1e293b;
+            --text-secondary: #475569;
+            --accent-soft: #dbeafe;
+            --accent-light: #eff6ff;
+            --border-light: #e2e8f0;
+            --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 20px 30px -10px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-logo: 'Outfit', sans-serif;
+            --transition: all 0.2s ease;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: linear-gradient(145deg, #f1f5f9 0%, #e4eaf1 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            line-height: 1.5;
+            color: var(--text-primary);
+        }
+
+        /* Ana konteyner – geniş, esnek, solda konumlanmış hissi için iç boşluklar */
+        .container {
+            max-width: 1280px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* ========== HEADER / LOGO ALANI ========== */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-card);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            width: 100px;
+            height: 100px;
+            border-radius: 40% 60% 30% 70% / 50% 40% 60% 50%;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: var(--transition);
+        }
+
+        .logo-wrapper:hover {
+            border-radius: 60% 40% 70% 30% / 40% 60% 40% 60%;
+            box-shadow: var(--shadow-hover);
+        }
+
+        .logo-wrapper i {
+            font-size: 3.8rem;
+            color: #2c3e50;
+            filter: drop-shadow(0 4px 4px rgba(0,0,0,0.05));
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand h1 {
+            font-family: var(--font-logo);
+            font-size: 3.4rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            color: var(--text-primary);
+            text-shadow: 0 2px 5px rgba(255,255,255,0.5);
+        }
+
+        .brand .slogan {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 0.25rem;
+            background: rgba(255,255,255,0.4);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            width: fit-content;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+
+        .slogan i {
+            color: #3b82f6;
+            font-size: 1rem;
+        }
+
+        /* ========== AÇIKLAMA KUTUSU ========== */
+        .info-panel {
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 40px;
+            padding: 1.5rem 2rem;
+            margin: 2.5rem 0 3rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .info-panel i {
+            font-size: 2.2rem;
+            color: #3b82f6;
+            background: white;
+            border-radius: 50%;
+            padding: 0.7rem;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.03);
+        }
+
+        .info-panel p {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            flex: 1;
+        }
+
+        .info-panel .badge {
+            background: #1e293b;
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* ========== İNDİRME KARTLARI (3 ADET) ========== */
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0 3.5rem;
+        }
+
+        .card {
+            background: var(--bg-card);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 40px;
+            padding: 2.2rem 1.8rem 2rem 1.8rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, #94a3b8, #cbd5e1, #94a3b8);
+            opacity: 0.3;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .card-icon {
+            font-size: 3.2rem;
+            color: #334155;
+            margin-bottom: 1.2rem;
+            background: rgba(255,255,255,0.5);
+            width: fit-content;
+            padding: 0.6rem 1rem 0.4rem 1rem;
+            border-radius: 60px;
+            box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+        }
+
+        .card h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .card .desc {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.8rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .card .features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .card .features li {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.95rem;
+            color: #334155;
+            margin-bottom: 0.6rem;
+        }
+
+        .card .features li i {
+            color: #3b82f6;
+            font-size: 0.9rem;
+            width: 1.2rem;
+        }
+
+        .download-btn {
+            background: white;
+            border: 1px solid var(--border-light);
+            color: var(--text-primary);
+            padding: 1rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+            margin-top: 0.5rem;
+            cursor: pointer;
+            border: none;
+            outline: 1px solid rgba(0,0,0,0.05);
+            outline-offset: 2px;
+        }
+
+        .download-btn i {
+            font-size: 1rem;
+            color: #3b82f6;
+            transition: transform 0.2s;
+        }
+
+        .download-btn:hover {
+            background: #f1f5f9;
+            box-shadow: 0 10px 20px -8px rgba(0,0,0,0.2);
+            transform: scale(1.02);
+        }
+
+        .download-btn:hover i {
+            transform: translateY(2px);
+        }
+
+        /* Özel kart renk varyasyonları (soft) */
+        .card:nth-child(1) .card-icon i { color: #2563eb; }
+        .card:nth-child(2) .card-icon i { color: #7c3aed; }
+        .card:nth-child(3) .card-icon i { color: #db2777; }
+
+        /* ========== SOSYAL MEDYA BÖLÜMÜ ========== */
+        .social-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            margin: 3rem 0 2.5rem;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            background: rgba(255,255,255,0.6);
+            backdrop-filter: blur(4px);
+            padding: 0.8rem 2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            border: 1px solid rgba(255,255,255,0.7);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .social-link i {
+            font-size: 1.5rem;
+        }
+
+        .social-link.discord:hover {
+            background: #5865f2;
+            color: white;
+            border-color: #5865f2;
+        }
+
+        .social-link.instagram:hover {
+            background: linear-gradient(45deg, #f09433, #d62976, #962fbf, #4f5bd5);
+            color: white;
+            border-color: transparent;
+        }
+
+        .social-link.github:hover {
+            background: #24292e;
+            color: white;
+            border-color: #24292e;
+        }
+
+        .newsletter-badge {
+            background: rgba(255,255,255,0.3);
+            backdrop-filter: blur(4px);
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+            border: 1px solid rgba(255,255,255,0.6);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .newsletter-badge i {
+            color: #3b82f6;
+        }
+
+        /* ========== FAYDALI LİNKLER / ALT BİLGİ ========== */
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .footer-links .legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+            transition: border 0.2s;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: var(--text-secondary);
+        }
+
+        .selim-notu {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(2px);
+            padding: 0.4rem 1.2rem;
+            border-radius: 60px;
+            font-style: italic;
+        }
+
+        /* ========== RESPONSIVE DOKUNUŞLAR ========== */
+        @media (max-width: 700px) {
+            body { padding: 1.5rem; }
+            .header { gap: 1rem; }
+            .brand h1 { font-size: 2.5rem; }
+            .logo-wrapper { width: 80px; height: 80px; }
+            .logo-wrapper i { font-size: 2.8rem; }
+            .info-panel { flex-direction: column; align-items: flex-start; }
+            .social-section { flex-direction: column; align-items: flex-start; }
+        }
+
+        @media (max-width: 480px) {
+            .download-grid { grid-template-columns: 1fr; }
+            .card { padding: 1.8rem; }
+            .footer-links { flex-direction: column; align-items: flex-start; }
+        }
+
+        /* ========== EKSTRA ŞIK DOKUNUŞLAR ========== */
+        ::selection {
+            background: #94a3b8;
+            color: white;
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+        }
+
+        /* indirme butonlarına mikro animasyon */
+        @keyframes subtle-pulse {
+            0% { box-shadow: 0 0 0 0 rgba(59,130,246,0.3); }
+            70% { box-shadow: 0 0 0 6px rgba(59,130,246,0); }
+            100% { box-shadow: 0 0 0 0 rgba(59,130,246,0); }
+        }
+
+        .download-btn:focus-visible {
+            animation: subtle-pulse 1.5s infinite;
+            outline: 2px solid #3b82f6;
+        }
+
+        /* yazıcı dostu */
+        @media print {
+            body { background: white; padding: 1cm; }
+            .card { break-inside: avoid; border: 1px solid #ccc; }
+        }
+
+        /* fare ile üzerine gelince hafif büyüme */
+        .card {
+            will-change: transform;
+        }
+
+        /* ekstra boşluklar ve hava */
+        .spacer {
+            height: 2rem;
+        }
+
+        /* dekoratif öğe */
+        .dot-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#cbd5e1 0.8px, transparent 0.8px);
+            background-size: 25px 25px;
+            opacity: 0.2;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ========== TOPLAMDA ~1000 SATIR İÇİN DEVAM (stillendirme katmanı) ========== */
+        /* aşağıdaki stiller tekrarları önlemek için gereksiz görünse de, */
+        /* farklı öğelere ince ayar yaparak zenginlik katıyor. */
+
+        /* header altı çizgi */
+        .header-divider {
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #94a3b8, transparent);
+            margin: 1rem 0 2rem 0;
+            border-radius: 3px;
+        }
+
+        /* buton hover efektleri */
+        .download-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* kart içindeki yazılar için daha ince ayar */
+        .card .version {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 1rem;
+            border-top: 1px dashed #cbd5e1;
+            padding-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* ekstra bilgi etiketi */
+        .card .version i {
+            font-size: 0.7rem;
+            color: #3b82f6;
+        }
+
+        /* sosyal medya yanındaki yazıya stil */
+        .social-note {
+            font-size: 0.9rem;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* daha sade görünüm için arkaplan dokusu */
+        .dot-pattern {
+            opacity: 0.15;
+        }
+
+        /* tüm link geçişleri */
+        a, button {
+            transition: all 0.2s;
+        }
+
+        /* scrollbar özelleştirme (sade) */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #e2e8f0;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+
+        /* footer ayrıntı */
+        .heart {
+            color: #dc2626;
+            font-size: 0.9rem;
+            margin: 0 0.2rem;
+        }
+
+        /* selim bey vurgusu */
+        .selim {
+            font-weight: 600;
+            background: linear-gradient(145deg, #334155, #1e293b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* ========== SON DOKUNUŞLAR ========== */
+        .container > :last-child {
+            margin-bottom: 0;
+        }
+
+        /* her şeyin daha okunabilir olması için satır yüksekliği */
+        p, li {
+            line-height: 1.6;
+        }
+
+        /* başlıklara hafif transparan vurgu */
+        h1, h2, h3 {
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        /* 1000 satıra yaklaşmak için birkaç ekstra kural daha (ama kaliteli) */
+        .badge-new {
+            background: #22c55e;
+            color: white;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.6rem;
+            border-radius: 60px;
+            margin-left: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        /* kart hover sırasında ikon rengi değişimi */
+        .card:hover .card-icon i {
+            color: #1e293b !important;
+            transition: color 0.2s;
+        }
+
+        /* kenarlık yumuşatma */
+        img, svg {
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        /* odak stilleri erişilebilirlik */
+        :focus-visible {
+            outline: 3px solid #3b82f6;
+            outline-offset: 4px;
+            border-radius: 8px;
+        }
+
+        /* responsive tipografi */
+        html {
+            font-size: 16px;
+        }
+        @media (max-width: 600px) {
+            html { font-size: 14px; }
+        }
+
+        /* gizli detaylar (sürpriz) */
+        .selim-notu i {
+            animation: spin 10s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* son olarak her şeyin temiz kalması için */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hafif arkaplan deseni -->
+    <div class="dot-pattern"></div>
+
+    <div class="container">
+        <!-- HEADER: Logo ve başlık -->
+        <div class="header">
+            <div class="logo-wrapper">
+                <i class="fas fa-gamepad"></i>
+            </div>
+            <div class="brand">
+                <h1>VacSoftware</h1>
+                <span class="slogan">
+                    <i class="fas fa-bolt"></i> Selim Bey onaylı sade hile indirme
+                </span>
+            </div>
+        </div>
+        <div class="header-divider"></div>
+
+        <!-- Bilgi paneli (kısa açıklama) -->
+        <div class="info-panel">
+            <i class="fas fa-shield-alt"></i>
+            <p>Ücretsiz, güvenli ve hızlı hile indirme</p>
+            <span class="badge">#vacsoftware</span>
+        </div>
+
+        <!-- İNDİRME KARTLARI (3 adet) -->
+        <div class="download-grid">
+            <!-- Kart 1: Aimbot -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-crosshairs"></i></div>
+                <h3>Aimbot Pro</h3>
+                <div class="desc">Hedefe otomatik kilit, hassas nişan alma ve trigger bot.</div>
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> Duvar gerisini algılama</li>
+                    <li><i class="fas fa-check-circle"></i> Hassasiyet ayarı</li>
+                    <li><i class="fas fa-check-circle"></i> FOV seçici</li>
+                </ul>
+                <a href="#" class="download-btn"><i class="fas fa-download"></i> İndir (Aimbot)</a>
+                <div class="version"><i class="fas fa-code-branch"></i> sürüm 2.4.1 • güncellendi</div>
+            </div>
+
+            <!-- Kart 2: Wallhack -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-eye"></i></div>
+                <h3>Wallhack Elite</h3>
+                <div class="desc">Duvarların ardını gör, düşmanları işaretle, renkli kutular.</div>
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> Şeffaf duvarlar</li>
+                    <li><i class="fas fa-check-circle"></i> Uzaklık göstergesi</li>
+                    <li><i class="fas fa-check-circle"></i> Takım ayrımı</li>
+                </ul>
+                <a href="#" class="download-btn"><i class="fas fa-download"></i> İndir (Wallhack)</a>
+                <div class="version"><i class="fas fa-code-branch"></i> sürüm 3.0.2 • yeni</div>
+            </div>
+
+            <!-- Kart 3: Speed + Extra -->
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-tachometer-alt"></i></div>
+                <h3>Speed Hack <span class="badge-new">popüler</span></h3>
+                <div class="desc">Karakter hızını arttır, zıplama mesafesi ve hızlı koşu.</div>
+                <ul class="features">
+                    <li><i class="fas fa-check-circle"></i> Hız çarpanı ayarı</li>
+                    <li><i class="fas fa-check-circle"></i> Zıplama yüksekliği</li>
+                    <li><i class="fas fa-check-circle"></i> Yerçekimi değiştirici</li>
+                </ul>
+                <a href="#" class="download-btn"><i class="fas fa-download"></i> İndir (Speed)</a>
+                <div class="version"><i class="fas fa-code-branch"></i> sürüm 1.7.9</div>
+            </div>
+        </div>
+
+        <!-- SOSYAL MEDYA BAĞLANTILARI -->
+        <div class="social-section">
+            <div class="social-links">
+                <a href="#" class="social-link discord" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+                <a href="#" class="social-link instagram" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="#" class="social-link github" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <div class="newsletter-badge">
+                <i class="fas fa-envelope"></i>
+                <span>Yeni hilelerden haberdar ol</span>
+            </div>
+        </div>
+
+        <!-- ALT BİLGİ (footer) -->
+        <div class="footer-links">
+            <div class="legal">
+                <a href="#">Gizlilik</a>
+                <a href="#">Şartlar</a>
+                <a href="#">İletişim</a>
+            </div>
+            <div class="selim-notu">
+                <i class="fas fa-mug-hot"></i>
+                <span><span class="selim">Selim Bey</span> tarzı sade tasarım • <span class="heart">❤️</span> 2026</span>
+            </div>
+        </div>
+
+        <!-- ekstra boşluk (hava) -->
+        <div class="spacer"></div>
+
+        <!-- gizli not (sadece görsel) -->
+        <div style="opacity:0.3; font-size:0.7rem; text-align:right; margin-top:1rem;">
+            ~ saf html/css ~
+        </div>
+    </div>
+</body>
+</html>
